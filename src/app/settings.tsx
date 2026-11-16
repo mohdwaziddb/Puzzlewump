@@ -2,7 +2,7 @@
  * Settings: big toggles (music, sound, vibration), two-step reset, and About.
  */
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Linking, StyleSheet, View } from 'react-native';
 import { useRouter } from 'expo-router';
 import Constants from 'expo-constants';
 import { MusicIcon, SoundIcon, VibrateIcon } from '@/art/ui';
@@ -15,6 +15,9 @@ import { useMenuMusic } from '@/components/hooks';
 import { useSettings, vibrate } from '@/store/settingsStore';
 import { useProgress } from '@/store/progressStore';
 import { colors } from '@/constants/theme';
+
+/** Required by Google Play: the privacy policy must be reachable from inside the app. Opens in the browser. */
+const PRIVACY_POLICY_URL = 'https://mohdwaziddb.github.io/Puzzlewump/privacy-policy.html';
 
 export default function SettingsScreen() {
   const router = useRouter();
@@ -79,6 +82,12 @@ export default function SettingsScreen() {
         <GameText size={13} color={colors.inkSoft} weight="medium" align="center">
           Everything is saved only on this device. No accounts, no internet, no tracking — just puzzles and fun.
         </GameText>
+        <GameButton
+          label="Privacy Policy"
+          variant="grey"
+          size="sm"
+          onPress={() => Linking.openURL(PRIVACY_POLICY_URL).catch(() => {})}
+        />
       </Panel>
 
       <GameModal visible={resetStep > 0} onClose={() => !busy && setResetStep(0)}>
