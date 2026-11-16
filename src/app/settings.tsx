@@ -68,7 +68,7 @@ export default function SettingsScreen() {
       <Panel style={[styles.section, { alignItems: 'center' }]}>
         <BrainMascot size={64} mood="happy" />
         <GameText size={20} color={colors.ink} weight="black" align="center">
-          Brain Quest – The Ultimate Mind Adventure
+          Puzzlewump – Puzzle Adventure
         </GameText>
         <GameText size={14} color={colors.inkSoft} weight="bold">
           Version {version}

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Brain Quest — procedural audio generator.
+ * Puzzlewump — procedural audio generator.
  *
  * README: Every sound and music loop in assets/audio/ is ORIGINAL and generated
  * procedurally by this script (pure math: oscillators, noise, envelopes, filters).

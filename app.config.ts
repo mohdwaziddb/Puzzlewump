@@ -1,7 +1,7 @@
 import type { ExpoConfig } from 'expo/config';
 
 /**
- * Brain Quest is fully offline. Release builds (EAS "preview" / "production")
+ * Puzzlewump is fully offline. Release builds (EAS "preview" / "production")
  * additionally block the INTERNET permission so the APK physically cannot
  * talk to the network. Development builds keep it so Metro can serve the bundle.
  */
@@ -33,9 +33,10 @@ const ALWAYS_BLOCKED = [
 ];
 
 const config: ExpoConfig = {
-  name: 'Brain Quest',
+  name: 'Puzzlewump',
+  // slug stays as-is: it is tied to the EAS projectId below (changing it causes a slug mismatch).
   slug: 'brain-quest',
-  scheme: 'brainquest',
+  scheme: 'puzzlewump',
   version: '1.0.0',
   orientation: 'portrait',
   icon: './assets/icon.png',
@@ -43,10 +44,12 @@ const config: ExpoConfig = {
   backgroundColor: '#5BC0F8',
   ios: {
     supportsTablet: true,
-    bundleIdentifier: 'com.brainquest.game',
+    bundleIdentifier: 'com.puzzlewump.app',
   },
   android: {
-    package: 'com.brainquest.game',
+    package: 'com.puzzlewump.app',
+    // Increase by 1 for every new upload to Google Play.
+    versionCode: 1,
     adaptiveIcon: {
       backgroundColor: '#5BC0F8',
       foregroundImage: './assets/android-icon-foreground.png',

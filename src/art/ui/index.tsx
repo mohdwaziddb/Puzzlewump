@@ -41,7 +41,7 @@ export const BrainMascot = React.memo(function BrainMascot({
   return <ArtImage source={UI_IMG.brain} width={size} height={size} />;
 });
 
-/** "Brain Quest / Mind Adventure" logo. width = size, height = size*0.75 */
+/** Game title logo (raster art, assets/images/ui/logo.webp). width = size, height = size*0.75 */
 export const Logo = React.memo(function Logo({ size }: { size: number }) {
   return <ArtImage source={UI_IMG.logo} width={size} height={size * 0.75} />;
 });
